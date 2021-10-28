@@ -1,0 +1,101 @@
+<div id="sidebar">
+  <div id="row1">
+    <div id="sidebarHeader">
+      <div class="avatarContainer">
+        <img
+          src="https://sf-tk-sg.ibytedtos.com/obj/tiktok-obj/1613746256880653"
+        />
+      </div>
+      <div class="actionsContainer">
+        <button class="btn btn-primary" (click)="createRoom()">
+          <span class="fa fa-plus mx-2"></span>Create
+        </button>
+      </div>
+    </div>
+    <div id="searchBox">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <input
+        [(ngModel)]="searchText"
+        type="text"
+        placeholder="Search or start the new chat"
+      />
+    </div>
+  </div>
+  <div id="sidebarContent">
+    <!-- <div id="noConversations">All chats are archived</div> -->
+    <!-- <div
+      class="conversation"
+      *ngFor="
+        let conversation of !searchText ? conversations : filteredConversations
+      "
+      (click)="conversationClicked.emit(conversation)"
+    >
+      <div class="picture">
+        <img
+          src="https://sf-tk-sg.ibytedtos.com/obj/tiktok-obj/1613746256880653"
+        />
+      </div>
+      <div class="content">
+        <div class="conversationHeader">
+          <div class="name">{{ conversation.name }}</div>
+          <div class="time">{{ conversation.time }}</div>
+        </div>
+        <div class="message">
+          <svg
+            *ngIf="!conversation.latestMessageRead"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="15"
+            id="msg-dblcheck"
+            x="2047"
+            y="2061"
+          >
+            <path
+              d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.88a.32.32 0 0 1-.484.032l-.358-.325a.32.32 0 0 0-.484.032l-.378.48a.418.418 0 0 0 .036.54l1.32 1.267a.32.32 0 0 0 .484-.034l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.88a.32.32 0 0 1-.484.032L1.892 7.77a.366.366 0 0 0-.516.005l-.423.433a.364.364 0 0 0 .006.514l3.255 3.185a.32.32 0 0 0 .484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"
+              fill="#92a58c"
+            />
+          </svg>
+          <svg
+            *ngIf="conversation.latestMessageRead"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="15"
+            id="msg-dblcheck-ack"
+            x="2063"
+            y="2076"
+          >
+            <path
+              d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.88a.32.32 0 0 1-.484.032l-.358-.325a.32.32 0 0 0-.484.032l-.378.48a.418.418 0 0 0 .036.54l1.32 1.267a.32.32 0 0 0 .484-.034l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.88a.32.32 0 0 1-.484.032L1.892 7.77a.366.366 0 0 0-.516.005l-.423.433a.364.364 0 0 0 .006.514l3.255 3.185a.32.32 0 0 0 .484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"
+              fill="#4fc3f7"
+            />
+          </svg>
+          {{ conversation.latestMessage }}
+        </div>
+      </div>
+    </div> -->
+    <!-- Chat room styles -->
+
+    <div
+      class="conversation"
+      *ngFor="let conversation of rooms"
+      (click)="conversationClicked.emit(conversation)"
+    >
+      <div class="picture">
+        <img
+          src="https://sf-tk-sg.ibytedtos.com/obj/tiktok-obj/1613746256880653"
+        />
+      </div>
+      <div class="content">
+        <div class="conversationHeader">
+          <div class="name">{{ conversation.name }}</div>
+          <!-- <div class="time">{{ conversation.time }}</div> -->
+        </div>
+        <div class="message">
+          {{ conversation.lastMsg }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat room Style end here -->
+  </div>
+</div>

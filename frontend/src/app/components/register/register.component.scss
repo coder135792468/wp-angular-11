@@ -1,0 +1,41 @@
+.card {
+	margin-top: 15px;
+	width: 550px;
+	padding: 45px;
+	position: absolute;
+	top: 55%;
+	left: 55%;
+	box-shadow: -1px 1px 5px rgba(#333, 0.2);
+	border-radius: 3px;
+}
+.login-form {
+	h3 {
+		text-align: center;
+		color: #767676;
+	}
+	.btnSubmit {
+		font-weight: 600;
+		color: #fff;
+		background-color: #25D366;
+	}
+	.login {
+		color: #25D366;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	p {
+		color: #767676;
+	}
+}
+.login-container {
+	form {
+		padding: 10%;
+	}
+}
+.btnSubmit {
+	width: 50%;
+	border-radius: 1rem;
+	padding: 1.5%;
+	border: none;
+	cursor: pointer;
+}
